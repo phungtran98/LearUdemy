@@ -14,19 +14,16 @@
   </head>
   <body>
     <header>
-      <h1>Vue Events</h1>
+      <h1>Vue Course Goals</h1>
     </header>
-    <section id="events">
-      <h2>Events in Action</h2>
-      <button v-on:click="add(10)">Add 10</button>
-      <button v-on:click="reduce(5)">Subtract 5</button>
-      <p>Result: {{ counter }}</p>
-      <!-- Two ways binding data in vue  -->
-      <!-- <input type="text" v-on:input="setName($event, 'Schwarzmüller')"> -->
-      <br>
-      <input type="text" v-model="name">
-      <p>Your Name: {{ name }}</p>
-      <button v-on:click="resetButtom">reset</button>
+    <section id="user-goals">
+      <h2>My course goals</h2>
+      <input type="text" v-model="getinputName" />
+      <button @click="addGoals">Add Goal</button>
+      <p v-if="goals.length === 0">No goals have been added yet - please start adding some!</p>
+      <ul v-else>
+        <li >Goal</li>
+      </ul>
     </section>
   </body>
 </html>
